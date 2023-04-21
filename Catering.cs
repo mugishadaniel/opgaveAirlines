@@ -24,32 +24,7 @@ namespace opAirlines
         {
             Console.WriteLine("Catering - rapport" + Environment.NewLine + "===============");
 
-            Dictionary<string, int> ordersPerAirport = new Dictionary<string, int>();
 
-            // Loop through all flights
-            //foreach (Flight flight in flights)
-            //{
-            //    // If catering was ordered for this flight
-            //    if (flight.CateringOrdered)
-            //    {
-            //        // Add the number of catering orders to the corresponding airport in the dictionary
-            //        if (ordersPerAirport.ContainsKey(flight.DepartureAirport))
-            //        {
-            //            ordersPerAirport[flight.DepartureAirport] += flight.NumberOfPassengers;
-            //        }
-            //        else
-            //        {
-            //            ordersPerAirport[flight.DepartureAirport] = flight.NumberOfPassengers;
-            //        }
-            //    }
-            //}
-
-            // Print the report
-            Console.WriteLine("Catering orders report:");
-            foreach (KeyValuePair<string, int> entry in ordersPerAirport)
-            {
-                Console.WriteLine($"- {entry.Key}: {entry.Value} orders");
-            }
         }
     }
 

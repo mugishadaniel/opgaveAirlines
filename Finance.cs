@@ -17,10 +17,25 @@ namespace opAirlines
         }
 
 
-        //rapport voor de brandstofkosten als voor de catering kunnen worden gemaakt op jaarbasis
 
         //brandstofkosten de totale kost van de uitgevoerde vluchten per jaar
+        public double BerekenTotaleBrandstofkosten(int jaar)
+        {
+            double totaleKosten = 0;
 
+            foreach (Flight flight in flights)
+            {
+                if (flight.DepartureDate.Year == jaar)
+                {
+                    double kostenPer100Km = flight.Airplane.FuelCost;
+                    double afstandInKm = flight.Route.Distance;
+                    double kostenVoorVlucht = kostenPer100Km * afstandInKm * flight.SeatsSold;
+                    totaleKosten += kostenVoorVlucht;
+                }
+            }
+
+            return totaleKosten;
+        }
         //catering geven we de kost mee per maand, maar maken we ook nog onderscheid per luchthaven (weglaten)
     }
 }

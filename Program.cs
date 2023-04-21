@@ -17,6 +17,7 @@
             airline.VoegFlight();
 
             sales.ShowRapport();
+            Console.WriteLine("Totale brandstofkost " + finance.BerekenTotaleBrandstofkosten(2021));
         }
     }
 }
